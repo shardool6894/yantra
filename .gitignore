@@ -1,0 +1,15 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# generated at runtime
+data/yantra.db
+data/extractions/*.partial.json
+
+# third-party manuals and what was extracted from them (copyrighted; add your own locally)
+/MANUALS/
+data/extractions/b0b257974a8ce7a1.json
+
+# secrets: keys come from environment variables only
+.env

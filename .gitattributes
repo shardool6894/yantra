@@ -1,0 +1,2 @@
+# the extraction cache is keyed by the PDF hash, so line endings must never be rewritten
+*.pdf binary

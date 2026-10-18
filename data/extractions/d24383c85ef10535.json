@@ -1,0 +1,894 @@
+{
+  "machine": "Hydrapress HP-200 Hydraulic Press",
+  "faults": [
+    {
+      "title": "Ram does not move",
+      "symptoms": [
+        "ram does not move when the cycle is started",
+        "press will not go down",
+        "motor is running but the ram stays still",
+        "ram not moving down or up",
+        "hydraulic cylinder not responding"
+      ],
+      "questions": [
+        {
+          "text": "Is the hydraulic motor running? (Listen for it and check whether the motor fan is turning.)",
+          "options": [
+            "Yes, the motor is running",
+            "No, the motor is silent"
+          ]
+        },
+        {
+          "text": "What does the pressure gauge show when you start a cycle?",
+          "options": [
+            "Zero or almost zero",
+            "Pressure builds up normally"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "description": "Motor is not starting: emergency stop is engaged or the motor overload relay has tripped.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Check that the red emergency stop button is released: twist it clockwise until it pops out.",
+              "is_warning": false
+            },
+            {
+              "text": "Press the green MOTOR START button once.",
+              "is_warning": false
+            },
+            {
+              "text": "If the motor still does not start, press the external overload reset knob on the cabinet door. Do not open the cabinet.",
+              "is_warning": false
+            },
+            {
+              "text": "Press MOTOR START again and confirm the motor runs.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Hydraulic oil level is too low.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor with the red STOP button before opening the filler cap.",
+              "is_warning": true
+            },
+            {
+              "text": "Read the oil sight glass on the reservoir. The level must be between the MIN and MAX marks.",
+              "is_warning": false
+            },
+            {
+              "text": "Remove the filler cap and top up with hydraulic oil ISO VG 46 until the level reaches the MAX mark.",
+              "is_warning": false
+            },
+            {
+              "text": "Refit the filler cap and start the motor.",
+              "is_warning": false
+            },
+            {
+              "text": "Run three empty cycles and check the sight glass again. Top up if the level fell below MAX.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Directional valve solenoid Y1 is not energised (blown fuse F4 or loose connector).",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Press the emergency stop before touching any connector or fuse.",
+              "is_warning": true
+            },
+            {
+              "text": "Check that the plug on valve Y1 is fully seated and its locking ring is tight.",
+              "is_warning": false
+            },
+            {
+              "text": "Open fuse holder F4 on the control panel. Replace the fuse with a 2 A glass fuse if the wire inside is broken.",
+              "is_warning": false
+            },
+            {
+              "text": "Release the emergency stop, start the motor and start a cycle.",
+              "is_warning": false
+            },
+            {
+              "text": "Confirm the green LED on valve Y1 lights up and the ram moves.",
+              "is_warning": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ram moves slowly",
+      "symptoms": [
+        "ram is moving very slowly",
+        "press cycle takes much longer than usual",
+        "slow pressing stroke",
+        "ram speed has dropped"
+      ],
+      "questions": [
+        {
+          "text": "What does the oil thermometer on the reservoir show?",
+          "options": [
+            "55 °C or below",
+            "Above 55 °C"
+          ]
+        },
+        {
+          "text": "What colour is the return filter clogging indicator?",
+          "options": [
+            "Green",
+            "Red"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "description": "Return line filter is clogged.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor and wait 2 minutes for the pressure to drop to zero before opening the filter housing.",
+              "is_warning": true
+            },
+            {
+              "text": "Unscrew the filter bowl and remove the old element.",
+              "is_warning": false
+            },
+            {
+              "text": "Fit a new element, part number HF-200-R, and tighten the bowl by hand plus a quarter turn.",
+              "is_warning": false
+            },
+            {
+              "text": "Start the motor and check that the indicator returns to green.",
+              "is_warning": false
+            },
+            {
+              "text": "Wipe away any spilled oil around the filter.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Oil is overheating because the cooler fan is not running or the cooler is blocked.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Hot oil can cause burns. Let the press cool for 15 minutes before touching the cooler.",
+              "is_warning": true
+            },
+            {
+              "text": "Check that the cooler fan spins when the oil is above 50 °C. If it does not, check fan fuse F5.",
+              "is_warning": false
+            },
+            {
+              "text": "Brush dust and lint off the cooler fins with a soft brush.",
+              "is_warning": false
+            },
+            {
+              "text": "Restart the press and watch the thermometer for 10 minutes. It must stay at or below 55 °C.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Flow control valve FC1 has been turned down.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Locate flow control valve FC1 beside the main cylinder.",
+              "is_warning": false
+            },
+            {
+              "text": "Loosen the lock nut on the FC1 adjuster.",
+              "is_warning": false
+            },
+            {
+              "text": "Turn the adjuster anticlockwise one turn at a time, running one cycle after each turn, until the stroke takes about 8 seconds.",
+              "is_warning": false
+            },
+            {
+              "text": "Tighten the lock nut and mark the adjuster with a paint pen.",
+              "is_warning": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pressing force too low (pressure does not reach the set value)",
+      "symptoms": [
+        "pressure gauge does not reach the set pressure",
+        "press is weak and cannot form the part",
+        "low pressing force",
+        "system pressure is low"
+      ],
+      "questions": [
+        {
+          "text": "Does the ram slowly creep downward when it is held under load?",
+          "options": [
+            "Yes, it creeps down",
+            "No, it holds its position"
+          ]
+        },
+        {
+          "text": "Is the oil in the reservoir foamy or milky?",
+          "options": [
+            "Yes, foamy or milky",
+            "No, the oil looks normal"
+          ]
+        },
+        {
+          "text": "Turn the relief valve RV1 adjuster one turn clockwise. Does the gauge pressure rise?",
+          "options": [
+            "Yes, the pressure rises",
+            "No, nothing changes"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "description": "Relief valve RV1 is set too low.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 2,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Loosen the lock nut on relief valve RV1.",
+              "is_warning": false
+            },
+            {
+              "text": "Turn the adjuster clockwise in quarter turns while watching the gauge.",
+              "is_warning": false
+            },
+            {
+              "text": "WARNING: Never set the pressure above 160 bar.",
+              "is_warning": true
+            },
+            {
+              "text": "Tighten the lock nut when the gauge reads 160 bar during a pressing stroke.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Air in the hydraulic system.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor before touching any fitting.",
+              "is_warning": true
+            },
+            {
+              "text": "Check that the oil level is above the MIN mark and top up if needed.",
+              "is_warning": false
+            },
+            {
+              "text": "Check that the pump suction hose clamps are tight (hand tight plus a quarter turn).",
+              "is_warning": false
+            },
+            {
+              "text": "Start the motor at low pressure and open the bleed screw at the top of the cylinder half a turn. Close it when oil comes out without bubbles.",
+              "is_warning": false
+            },
+            {
+              "text": "Run five empty cycles. The foam should clear within 10 minutes.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Piston seal inside the main cylinder is leaking.",
+          "needs_technician": true,
+          "reason": "The cylinder must be dismantled to replace the piston seal.",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 2,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Stop the press and press the emergency stop.",
+              "is_warning": false
+            },
+            {
+              "text": "Switch off the main isolator and apply your lock-out padlock.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Relief valve RV1 is stuck partly open because of dirt.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 2,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor and wait for the pressure to drop to zero before removing RV1.",
+              "is_warning": true
+            },
+            {
+              "text": "Note the number of adjuster turns, then unscrew the RV1 cartridge with a 24 mm spanner.",
+              "is_warning": false
+            },
+            {
+              "text": "Rinse the cartridge in clean hydraulic oil. Do not use rags or compressed air.",
+              "is_warning": false
+            },
+            {
+              "text": "Refit the cartridge and turn the adjuster back to the noted position.",
+              "is_warning": false
+            },
+            {
+              "text": "Start the motor, set the pressure to 160 bar on the gauge and tighten the lock nut.",
+              "is_warning": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hydraulic oil leak",
+      "symptoms": [
+        "oil is leaking from the press",
+        "puddle of oil under the machine",
+        "oil dripping from the cylinder or hoses",
+        "wet oil patches on the press"
+      ],
+      "questions": [
+        {
+          "text": "Where is the oil coming from?",
+          "options": [
+            "Around the cylinder rod",
+            "From a hose or fitting",
+            "From the reservoir (tank)"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "description": "Rod seal on the main cylinder is worn.",
+          "needs_technician": true,
+          "reason": "Replacing the rod seal means removing the cylinder from the frame.",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Stop the press and press the emergency stop.",
+              "is_warning": false
+            },
+            {
+              "text": "Place a drip tray under the cylinder and keep people away from the area.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "A hose or fitting is loose or damaged.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor and wait 2 minutes for the pressure to drop to zero.",
+              "is_warning": true
+            },
+            {
+              "text": "Wipe the area dry and find the exact point where the oil comes out.",
+              "is_warning": false
+            },
+            {
+              "text": "If a fitting is wet, tighten it with a 22 mm spanner to 35 Nm.",
+              "is_warning": false
+            },
+            {
+              "text": "If the hose itself is cracked, swollen or chafed, stop work and fit a new hose, part number HP-200-H3.",
+              "is_warning": false
+            },
+            {
+              "text": "Run three cycles and check that the fitting stays dry.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Reservoir filler cap or tank cover gasket is loose.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                2
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor before touching the reservoir.",
+              "is_warning": true
+            },
+            {
+              "text": "Tighten the filler cap by hand.",
+              "is_warning": false
+            },
+            {
+              "text": "Tighten the 8 tank cover screws in a cross pattern to 10 Nm.",
+              "is_warning": false
+            },
+            {
+              "text": "Wipe up the oil and check again after three cycles.",
+              "is_warning": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cycle will not start (start buttons have no effect)",
+      "symptoms": [
+        "cycle start button does nothing",
+        "press does not start when I press both buttons",
+        "machine will not start a cycle",
+        "start buttons are not responding"
+      ],
+      "questions": [
+        {
+          "text": "Is the Control Power lamp on the panel lit?",
+          "options": [
+            "Yes, it is lit",
+            "No, it is off"
+          ]
+        },
+        {
+          "text": "Is the amber Safety Circuit lamp lit?",
+          "options": [
+            "Yes, it is lit",
+            "No, it is off"
+          ]
+        },
+        {
+          "text": "Is the front guard door fully closed?",
+          "options": [
+            "Yes, fully closed",
+            "No, it is open or not latched"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "description": "Control fuse F2 is blown.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Press the emergency stop and switch off the main isolator before opening the fuse holder.",
+              "is_warning": true
+            },
+            {
+              "text": "Open fuse holder F2 on the side of the panel and look at the 4 A fuse. Replace it if the wire inside is broken.",
+              "is_warning": false
+            },
+            {
+              "text": "Close the fuse holder, switch the isolator on and release the emergency stop.",
+              "is_warning": false
+            },
+            {
+              "text": "If the new fuse blows straight away, stop and call a technician.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "The guard door is open or not latched.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 2,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Close the front guard door fully until it clicks.",
+              "is_warning": false
+            },
+            {
+              "text": "Check that nothing, such as a tool or a part, is trapped in the door edge.",
+              "is_warning": false
+            },
+            {
+              "text": "Confirm the Safety Circuit lamp goes off.",
+              "is_warning": false
+            },
+            {
+              "text": "Press both start buttons together to start the cycle.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Guard door switch S1 is misaligned or faulty.",
+          "needs_technician": true,
+          "reason": "Safety interlocks must only be adjusted or replaced by a qualified technician and must never be bypassed.",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 2,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Stop work and leave the guard door closed.",
+              "is_warning": false
+            },
+            {
+              "text": "Do not bypass or tape over the door switch.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "The two start buttons are not pressed together.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 2,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Press and hold both green start buttons at the same time. They must be pressed within 0.5 seconds of each other.",
+              "is_warning": false
+            },
+            {
+              "text": "Check that neither button is stuck in. A stuck button must spring back when released.",
+              "is_warning": false
+            },
+            {
+              "text": "Wipe oil and dirt off both buttons with a dry cloth, then try again.",
+              "is_warning": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hydraulic pump is noisy",
+      "symptoms": [
+        "hydraulic pump is making a loud noise",
+        "whining sound from the pump",
+        "knocking or grinding noise from the pump unit",
+        "pump is very noisy"
+      ],
+      "questions": [
+        {
+          "text": "What is the oil level in the sight glass?",
+          "options": [
+            "Below the MIN mark",
+            "Between MIN and MAX"
+          ]
+        },
+        {
+          "text": "What does the pump inlet vacuum gauge show?",
+          "options": [
+            "Needle in the red zone",
+            "Needle in the green zone"
+          ]
+        }
+      ],
+      "causes": [
+        {
+          "description": "Oil level is too low, so the pump sucks in air.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor with the red STOP button before opening the filler cap.",
+              "is_warning": true
+            },
+            {
+              "text": "Remove the filler cap and top up with hydraulic oil ISO VG 46 until the level reaches the MAX mark.",
+              "is_warning": false
+            },
+            {
+              "text": "Refit the filler cap, start the motor and listen. The noise should stop within a minute.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "The pump suction strainer is blocked.",
+          "needs_technician": false,
+          "reason": "",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                0
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "WARNING: Stop the motor and close suction ball valve V1 before removing the strainer cover.",
+              "is_warning": true
+            },
+            {
+              "text": "Remove the strainer cover and pull out the mesh basket.",
+              "is_warning": false
+            },
+            {
+              "text": "Rinse the basket in clean hydraulic oil and refit it.",
+              "is_warning": false
+            },
+            {
+              "text": "Open V1 fully, restart the motor and confirm the vacuum gauge reads in the green zone.",
+              "is_warning": false
+            }
+          ]
+        },
+        {
+          "description": "Pump bearings are worn.",
+          "needs_technician": true,
+          "reason": "The pump must be removed from the press and rebuilt.",
+          "answers": [
+            {
+              "q": 0,
+              "opts": [
+                1
+              ]
+            },
+            {
+              "q": 1,
+              "opts": [
+                1
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Stop the press and press the emergency stop.",
+              "is_warning": false
+            },
+            {
+              "text": "Switch off the main isolator and apply your lock-out padlock.",
+              "is_warning": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
