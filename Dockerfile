@@ -15,4 +15,5 @@ EXPOSE 8000
 
 # Update this command based on how you usually start your Python app
 # For example, if using FastAPI: CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-CMD ["python", "app/main.py"]
+EXPOSE 10000
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
