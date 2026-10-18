@@ -6,6 +6,7 @@ WORKDIR /app
 # Copy requirements first to leverage Docker layer caching
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python -c "from fastembed import TextEmbedding; TextEmbedding('sentence-transformers/all-MiniLM-L6-v2')"
 
 # Copy the rest of your project files
 COPY . .

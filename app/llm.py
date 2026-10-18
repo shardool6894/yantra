@@ -12,19 +12,14 @@ from config import EMBED_MODEL, GEMINI_API_KEY, HF_TOKEN, LLM_FALLBACKS, LLM_MOD
 
 _embedder = None
 
-
 def embed(texts):
-    """Unit-length float32 vectors, shape (len(texts), dim). Local model, deterministic."""
+    """Unit-length float32 vectors, shape (len(texts), dim)."""
     global _embedder
     if _embedder is None:
-        from sentence_transformers import SentenceTransformer
-
-        try:  # use the local copy if there is one, so startup makes no network calls
-            _embedder = SentenceTransformer(EMBED_MODEL, local_files_only=True)
-        except OSError:
-            _embedder = SentenceTransformer(EMBED_MODEL)  # first run: download it
-    return np.asarray(_embedder.encode(list(texts), normalize_embeddings=True), dtype=np.float32)
-
+        from fastembed import TextEmbedding
+        _embedder = TextEmbedding("sentence-transformers/all-MiniLM-L6-v2")
+    vecs = np.array(list(_embedder.embed(list(texts))), dtype=np.float32)
+    return vecs / np.linalg.norm(vecs, axis=1, keepdims=True)
 
 def generate(system, prompt):
     """Ingestion-time only. Never called while an operator is diagnosing."""

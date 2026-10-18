@@ -4,5 +4,5 @@ python-multipart
 pypdf
 numpy
 huggingface_hub
-sentence-transformers
+fastembed
 reportlab
